@@ -11,9 +11,9 @@ int main()
 	bool Win = false;
 
 	srand(time(NULL));
-	Random = rand() % 100;
+	Random = rand() % 1000;
 
-	for (int i = 5; i >= 0; i--)
+	for (int i = 8; i >= 0; i--)
 	{
 		std::cout << "Turns Remaining: " << i << std::endl;
 		std::cout << "Guess The Number: ";
