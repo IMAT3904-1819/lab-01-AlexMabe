@@ -22,7 +22,7 @@ int main()
 		{
 			system("CLS");
 			std::cout << "CORRECT! Well Done!" << std::endl;
-			bool Win = true;
+			Win = true;
 			break;
 		}
 		else 
@@ -40,7 +40,7 @@ int main()
 	}
 	if (!Win)
 	{
-		std::cout << "The Correct Answer Was: " << Random << std::endl;
+		std::cout << "Sorry.. You're Out of Turns" << std::endl << "The Correct Answer Was: " << Random << std::endl;
 	}
 
 
