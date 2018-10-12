@@ -1,49 +1,50 @@
 #include "stdafx.h"
-#include <time.h>
+#include <time.h>												//Includes
 #include <iostream>
 
 
 
-int main()
+int main()														//Enter the program
 {
-	int Random;
-	int Guess;
-	bool Win = false;
+	int Random;													//Used for random number		
+	int Guess;													//Used to hold the guess
+	bool Win = false;											//Has the player won?
 
-	srand(time(NULL));
-	Random = rand() % 100;
+	srand(time(NULL));											//Used to ensure randomness
+	Random = rand() % 100;										//Randomis between 1-100
 
-	for (int i = 5; i >= 0; i--)
+	for (int i = 5; i >= 0; i--)								//Loop the amount of guesses left
 	{
-		std::cout << "Turns Remaining: " << i << std::endl;
-		std::cout << "Guess The Number: ";
-		std::cin >> Guess;
-		if (Guess == Random)
+		std::cout << "Turns Remaining: " << i << std::endl;		//Output turns remaining
+		std::cout << "Guess The Number: ";						//As player to guess
+		std::cin >> Guess;										//Guess input
+		if (Guess == Random)									//Has the player guessed correctly
 		{
-			system("CLS");
-			std::cout << "CORRECT! Well Done!" << std::endl;
-			Win = true;
-			break;
+			system("CLS");										//Clear the screen
+			std::cout << "CORRECT! Well Done!" << std::endl;	//Notify the player
+			Win = true;											//Set win as true
+			break;												//Break out of the loop
 		}
-		else 
+		else													//Else the player has not guessed correctly
 		{
-			system("CLS");
-			if (Guess < Random)
+			system("CLS");										//Clear the screen
+			if (Guess < Random)									//If the guess is less than the number
 			{
-				std::cout << "Try a Higher Number" << std::endl;
+				std::cout << "Try a Higher Number" << std::endl;//Tell player to enter a higher number
 			}
-			else
+			else												//Else player has guessed less than number
 			{
-				std::cout << "Try a Lower Number" << std::endl;
+				std::cout << "Try a Lower Number" << std::endl;	//Tell the player to enter a lower number
 			}
 		}
 	}
-	if (!Win)
+	if (!Win)													//If the player has won
 	{
-		std::cout << "Sorry.. You're Out of Turns" << std::endl << "The Correct Answer Was: " << Random << std::endl;
+		std::cout << "Sorry.. You're Out of Turns" << std::endl //Tell the player they are out of turns
+		<< "The Correct Answer Was: " << Random << std::endl;	//Tell the player the correct answer
 	}
 
 
-	system("Pause");
-	return 0;
+	system("Pause");											//Pause the console
+	return 0;													//Exit the program
 }
